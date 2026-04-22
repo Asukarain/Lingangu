@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "FLUX & DALL-E 提示词模板库",
+    "version": "1.0",
+    "updated": "2026-04-22",
+    "description": "适用于 FLUX 和 DALL-E 3 的自然语言提示词模板",
+    "usage": "FLUX 和 DALL-E 均偏好自然语言描述而非关键词堆叠，直接将 prompt 字段内容粘贴使用"
+  },
+  "flux_templates": [
+    {
+      "id": "flux-portrait",
+      "name": "写实人像",
+      "description": "FLUX 的写实人像表现力极强",
+      "prompt": "A close-up portrait photograph of [人物描述, e.g., an elderly Japanese woman with deep smile lines and silver hair pulled back in a bun]. She is [动作/表情, e.g., looking directly at the camera with warm, knowing eyes]. The lighting is [光照, e.g., soft and natural, coming from a nearby window, creating gentle shadows on one side of her face]. Shot with a [镜头, e.g., medium format camera, shallow depth of field], the background is [背景, e.g., a softly blurred traditional Japanese room]. The mood is [氛围, e.g., intimate and contemplative, with warm earth tones].",
+      "placeholders": ["人物描述", "动作/表情", "光照", "镜头", "背景", "氛围"],
+      "tags": ["portrait", "photorealistic", "flux"],
+      "recommended_model": "FLUX 1.1 Pro / FLUX Dev",
+      "tips": "FLUX 对自然语言描述响应极佳，避免使用关键词堆叠"
+    },
+    {
+      "id": "flux-scene",
+      "name": "叙事场景",
+      "description": "利用 FLUX 的长提示词理解能力构建复杂场景",
+      "prompt": "A [风格, e.g., cinematic wide-angle photograph] of [场景, e.g., a bustling night market in Bangkok]. In the foreground, [前景, e.g., a street food vendor is tossing noodles in a flaming wok, sparks flying upward]. The middle ground shows [中景, e.g., crowds of tourists and locals weaving between colorful stalls hung with paper lanterns]. In the background, [背景, e.g., the silhouette of a temple spire rises against a deep purple twilight sky]. The atmosphere is [氛围, e.g., alive with warm golden light from the lanterns, steam rising from food stalls, and the energy of a thousand conversations].",
+      "placeholders": ["风格", "场景", "前景", "中景", "背景", "氛围"],
+      "tags": ["scene", "narrative", "cinematic"],
+      "recommended_model": "FLUX 1.1 Pro",
+      "tips": "FLUX 擅长处理分层描述，按前景/中景/背景组织提示词效果最佳"
+    },
+    {
+      "id": "flux-text-render",
+      "name": "精确文字渲染",
+      "description": "FLUX 的文字渲染能力领先",
+      "prompt": "A [物体/场景, e.g., vintage wooden signboard hanging from wrought iron brackets] displaying the text \"[文字内容, e.g., THE OLD BOOKSHOP - EST. 1923]\" in [字体风格, e.g., hand-painted serif lettering with gold leaf accents]. The sign is [环境, e.g., weathered and slightly faded, mounted on a red brick wall covered in ivy]. The lighting is [光照, e.g., warm afternoon sunlight casting a soft shadow behind the sign]. The overall feel is [氛围, e.g., charming and nostalgic, like a quiet street in Oxford].",
+      "placeholders": ["物体/场景", "文字内容", "字体风格", "环境", "光照", "氛围"],
+      "tags": ["text-rendering", "signage", "typography"],
+      "recommended_model": "FLUX 1.1 Pro",
+      "tips": "FLUX 是目前文字渲染最准确的模型之一，文字用引号包裹效果最佳"
+    },
+    {
+      "id": "flux-product",
+      "name": "产品摄影",
+      "description": "商业级产品展示",
+      "prompt": "A professional product photograph of [产品, e.g., a sleek matte black wireless headphone]. The product is [摆放, e.g., floating at a slight angle against a clean gradient background that transitions from dark charcoal to medium gray]. The lighting is [光照, e.g., precise studio lighting with a key light from the upper left creating a subtle highlight along the edge, and a fill light softening the shadows]. [细节, e.g., The ear cushion texture is clearly visible, and there is a subtle reflection on the surface below]. The image has [品质, e.g., the polished, high-end look of an Apple product launch photograph].",
+      "placeholders": ["产品", "摆放", "光照", "细节", "品质"],
+      "tags": ["product", "commercial", "studio"],
+      "recommended_model": "FLUX 1.1 Pro",
+      "tips": "描述光照和材质细节对产品摄影至关重要"
+    }
+  ],
+  "dalle_templates": [
+    {
+      "id": "dalle-creative",
+      "name": "创意概念图",
+      "description": "DALL-E 3 的创意概念生成",
+      "prompt": "An imaginative illustration of [概念, e.g., a library that exists inside a giant ancient tree]. [细节描述, e.g., The interior is carved from living wood, with bookshelves growing organically from the trunk walls. Spiral staircases made of twisted roots connect multiple levels. Small glowing mushrooms provide warm ambient light, and tiny fairy-like creatures serve as librarians, flying between shelves carrying miniature books]. The art style is [风格, e.g., detailed digital painting with a warm, whimsical color palette of amber, forest green, and soft gold]. [氛围, e.g., The overall mood is magical and inviting, like stepping into a Studio Ghibli film].",
+      "placeholders": ["概念", "细节描述", "风格", "氛围"],
+      "tags": ["creative", "illustration", "fantasy"],
+      "recommended_model": "DALL-E 3",
+      "tips": "DALL-E 3 擅长将抽象概念转化为具象图像，描述越有想象力效果越好"
+    },
+    {
+      "id": "dalle-infographic",
+      "name": "信息图表风格",
+      "description": "图解和信息可视化",
+      "prompt": "A clean, modern infographic-style illustration explaining [主题, e.g., how photosynthesis works]. The design uses [风格, e.g., a flat design aesthetic with a limited color palette of green, yellow, and white on a dark blue background]. [内容, e.g., Show a cross-section of a leaf with labeled parts, arrows indicating the flow of water, CO2, and sunlight, and simple icons representing each element]. Include the title \"[标题, e.g., THE MAGIC OF PHOTOSYNTHESIS]\" at the top in [字体, e.g., bold, clean sans-serif typography]. The overall style is [品质, e.g., professional and educational, suitable for a science textbook or museum display].",
+      "placeholders": ["主题", "风格", "内容", "标题", "字体", "品质"],
+      "tags": ["infographic", "educational", "diagram"],
+      "recommended_model": "DALL-E 3",
+      "tips": "DALL-E 3 对结构化内容描述的理解力强，适合信息图表类生成"
+    }
+  ],
+  "prompting_principles": {
+    "flux": [
+      "使用完整的自然语言句子，而非关键词列表",
+      "按空间层次组织描述（前景→中景→背景）",
+      "明确指定光照方向、强度和色温",
+      "描述材质的物理特性（反射、透明度、纹理）",
+      "避免使用 SD 风格的权重语法和负面提示词",
+      "提示词长度 60-150 词效果最佳"
+    ],
+    "dalle": [
+      "使用描述性的自然语言，像讲故事一样描述画面",
+      "明确指定艺术风格和媒介（油画、水彩、数字插画等）",
+      "DALL-E 3 会自动优化提示词，不需要过度技术化",
+      "可以描述抽象概念，DALL-E 擅长概念到图像的转化",
+      "避免请求特定品牌、名人或受版权保护的内容",
+      "简洁但具体的描述通常比冗长的提示词效果更好"
+    ]
+  }
+}
