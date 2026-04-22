@@ -1,0 +1,347 @@
+{
+  "meta": {
+    "title": "Midjourney 提示词模板库",
+    "version": "2.0",
+    "updated": "2026-04-22",
+    "description": "可直接复制使用的 Midjourney 提示词模板，覆盖 V7/V8 全版本",
+    "usage": "将 prompt 字段的内容直接粘贴到 Midjourney 中使用，根据需要替换 [方括号] 中的占位符"
+  },
+  "categories": [
+    {
+      "name": "写实摄影",
+      "id": "photography",
+      "templates": [
+        {
+          "id": "photo-portrait",
+          "name": "电影级人像",
+          "description": "适用于高质量写实人像，V8 表现最佳",
+          "prompt": "A cinematic portrait of [人物描述, e.g., a weathered fisherman with deep wrinkles], shot on Canon EOS R5, 85mm f/1.4 lens, [光照, e.g., golden hour side lighting], shallow depth of field, film grain, [色调, e.g., warm amber tones] --ar 2:3 --v 8 --s 250 --raw",
+          "parameters": {
+            "--ar": "2:3",
+            "--v": "8",
+            "--s": "250",
+            "--raw": true
+          },
+          "placeholders": ["人物描述", "光照", "色调"],
+          "tags": ["portrait", "cinematic", "photorealistic"],
+          "recommended_version": "V8/V8.1"
+        },
+        {
+          "id": "photo-landscape",
+          "name": "风景摄影",
+          "description": "自然风光与城市景观",
+          "prompt": "A breathtaking [场景, e.g., mountain landscape at sunrise], captured with Sony A7R V, 24mm wide angle lens, [天气/氛围, e.g., misty morning with golden light rays], hyper-detailed, 8K resolution, National Geographic style --ar 16:9 --v 8 --s 200 --hd",
+          "parameters": {
+            "--ar": "16:9",
+            "--v": "8",
+            "--s": "200",
+            "--hd": true
+          },
+          "placeholders": ["场景", "天气/氛围"],
+          "tags": ["landscape", "nature", "photography"],
+          "recommended_version": "V8/V8.1"
+        },
+        {
+          "id": "photo-product",
+          "name": "产品摄影",
+          "description": "电商级产品展示",
+          "prompt": "Professional product photography of [产品, e.g., a luxury perfume bottle], on [背景, e.g., a marble surface with soft shadows], studio lighting with [光效, e.g., dramatic rim light and soft fill], commercial quality, 4K, clean composition --ar 4:5 --v 8 --s 100 --raw",
+          "parameters": {
+            "--ar": "4:5",
+            "--v": "8",
+            "--s": "100",
+            "--raw": true
+          },
+          "placeholders": ["产品", "背景", "光效"],
+          "tags": ["product", "commercial", "ecommerce"],
+          "recommended_version": "V8/V8.1"
+        },
+        {
+          "id": "photo-street",
+          "name": "街头纪实",
+          "description": "街拍与纪实风格",
+          "prompt": "Street photography of [场景, e.g., a rainy Tokyo alley at night], shot on Leica M11, 35mm f/1.4, [氛围, e.g., neon reflections on wet pavement], candid moment, documentary style, slight film grain --ar 3:2 --v 8 --s 150 --raw",
+          "parameters": {
+            "--ar": "3:2",
+            "--v": "8",
+            "--s": "150",
+            "--raw": true
+          },
+          "placeholders": ["场景", "氛围"],
+          "tags": ["street", "documentary", "urban"],
+          "recommended_version": "V8/V8.1"
+        }
+      ]
+    },
+    {
+      "name": "概念艺术与插画",
+      "id": "concept-art",
+      "templates": [
+        {
+          "id": "concept-character",
+          "name": "角色概念设计",
+          "description": "游戏/影视角色设计",
+          "prompt": "[角色描述, e.g., A cyberpunk samurai with neon-lit armor], character concept art, full body, [视角, e.g., dynamic three-quarter view], detailed costume design, [风格, e.g., Artstation trending, Wlop style], intricate details, dramatic lighting --ar 2:3 --v 7 --s 500",
+          "parameters": {
+            "--ar": "2:3",
+            "--v": "7",
+            "--s": "500"
+          },
+          "placeholders": ["角色描述", "视角", "风格"],
+          "tags": ["character", "concept-art", "game-design"],
+          "recommended_version": "V7"
+        },
+        {
+          "id": "concept-environment",
+          "name": "环境概念设计",
+          "description": "场景与世界观设定",
+          "prompt": "Epic [环境, e.g., floating sky city above the clouds], environment concept art, [氛围, e.g., ethereal golden light piercing through mist], matte painting style, cinematic composition, ultra wide establishing shot, [艺术风格, e.g., Studio Ghibli meets Blade Runner] --ar 21:9 --v 7 --s 600",
+          "parameters": {
+            "--ar": "21:9",
+            "--v": "7",
+            "--s": "600"
+          },
+          "placeholders": ["环境", "氛围", "艺术风格"],
+          "tags": ["environment", "concept-art", "matte-painting"],
+          "recommended_version": "V7"
+        },
+        {
+          "id": "concept-creature",
+          "name": "生物设计",
+          "description": "奇幻/科幻生物概念",
+          "prompt": "Creature design of [生物, e.g., an ancient forest guardian made of living wood and moss], [视角, e.g., front and side view turnaround], biological plausibility, [细节, e.g., bioluminescent markings], concept art sheet, white background --ar 16:9 --v 7 --s 400",
+          "parameters": {
+            "--ar": "16:9",
+            "--v": "7",
+            "--s": "400"
+          },
+          "placeholders": ["生物", "视角", "细节"],
+          "tags": ["creature", "concept-art", "fantasy"],
+          "recommended_version": "V7"
+        }
+      ]
+    },
+    {
+      "name": "平面设计与排版",
+      "id": "graphic-design",
+      "templates": [
+        {
+          "id": "design-poster",
+          "name": "海报设计",
+          "description": "活动/电影海报，V8 文字渲染增强",
+          "prompt": "A [风格, e.g., minimalist Japanese] poster design for [主题, e.g., a jazz music festival], featuring \"[标题文字, e.g., TOKYO JAZZ 2026]\" in [字体风格, e.g., bold sans-serif typography], [视觉元素, e.g., abstract saxophone silhouette with flowing musical notes], [配色, e.g., deep navy and gold color scheme] --ar 2:3 --v 8 --s 300",
+          "parameters": {
+            "--ar": "2:3",
+            "--v": "8",
+            "--s": "300"
+          },
+          "placeholders": ["风格", "主题", "标题文字", "字体风格", "视觉元素", "配色"],
+          "tags": ["poster", "graphic-design", "typography"],
+          "recommended_version": "V8/V8.1"
+        },
+        {
+          "id": "design-logo",
+          "name": "Logo 概念",
+          "description": "品牌标识概念设计",
+          "prompt": "Minimalist logo design for [品牌, e.g., a premium tea brand called 'Zenleaf'], [风格, e.g., clean geometric mark combining a leaf and zen circle], [配色, e.g., forest green on white], vector style, professional branding, simple and memorable --ar 1:1 --v 8 --s 200",
+          "parameters": {
+            "--ar": "1:1",
+            "--v": "8",
+            "--s": "200"
+          },
+          "placeholders": ["品牌", "风格", "配色"],
+          "tags": ["logo", "branding", "minimalist"],
+          "recommended_version": "V8/V8.1"
+        },
+        {
+          "id": "design-social",
+          "name": "社交媒体图",
+          "description": "Instagram/小红书风格配图",
+          "prompt": "[风格, e.g., Aesthetic flat lay] of [内容, e.g., a cozy reading setup with coffee, books, and autumn leaves], [色调, e.g., warm mocha and cream tones], Instagram-worthy composition, soft natural light from above, lifestyle photography --ar 1:1 --v 8 --s 200",
+          "parameters": {
+            "--ar": "1:1",
+            "--v": "8",
+            "--s": "200"
+          },
+          "placeholders": ["风格", "内容", "色调"],
+          "tags": ["social-media", "lifestyle", "instagram"],
+          "recommended_version": "V8/V8.1"
+        }
+      ]
+    },
+    {
+      "name": "纹理与图案",
+      "id": "patterns",
+      "templates": [
+        {
+          "id": "pattern-seamless",
+          "name": "无缝纹理",
+          "description": "可平铺的无缝图案",
+          "prompt": "Seamless [类型, e.g., watercolor floral] pattern, [描述, e.g., delicate cherry blossoms and leaves], [配色, e.g., soft pink and sage green on cream background], repeating tile, textile design quality --ar 1:1 --v 7 --tile",
+          "parameters": {
+            "--ar": "1:1",
+            "--v": "7",
+            "--tile": true
+          },
+          "placeholders": ["类型", "描述", "配色"],
+          "tags": ["pattern", "seamless", "textile"],
+          "recommended_version": "V7"
+        },
+        {
+          "id": "pattern-texture",
+          "name": "材质纹理",
+          "description": "PBR 材质或背景纹理",
+          "prompt": "Highly detailed [材质, e.g., aged leather] texture, [细节, e.g., with natural cracks, scratches, and patina], top-down view, even lighting, PBR material reference, 4K resolution --ar 1:1 --v 8 --raw",
+          "parameters": {
+            "--ar": "1:1",
+            "--v": "8",
+            "--raw": true
+          },
+          "placeholders": ["材质", "细节"],
+          "tags": ["texture", "material", "PBR"],
+          "recommended_version": "V8/V8.1"
+        }
+      ]
+    },
+    {
+      "name": "V8 专属高级模板",
+      "id": "v8-advanced",
+      "templates": [
+        {
+          "id": "v8-personalized",
+          "name": "个性化驱动生成",
+          "description": "利用 V8 个性化配置的最佳实践",
+          "prompt": "[详细场景描述, e.g., A solitary lighthouse on a rocky cliff during a violent thunderstorm, massive waves crashing against the rocks, lightning illuminating the dark sky, rain-soaked stone path leading to the lighthouse door] --v 8 --s 1000 --p --hd",
+          "parameters": {
+            "--v": "8",
+            "--s": "1000",
+            "--p": true,
+            "--hd": true
+          },
+          "placeholders": ["详细场景描述"],
+          "tags": ["personalization", "v8", "advanced"],
+          "recommended_version": "V8/V8.1",
+          "notes": "V8 在 --stylize 1000 配合个性化配置时表现最佳，提示词应更长更具体"
+        },
+        {
+          "id": "v8-style-ref",
+          "name": "风格参考组合",
+          "description": "使用多重风格参考保持一致性",
+          "prompt": "[内容描述, e.g., A cozy bookshop interior with warm lighting and floor-to-ceiling shelves] --v 8 --sref [风格参考URL1] [风格参考URL2] --sw 300 --s 500 --hd",
+          "parameters": {
+            "--v": "8",
+            "--sref": "[URL]",
+            "--sw": "300",
+            "--s": "500",
+            "--hd": true
+          },
+          "placeholders": ["内容描述", "风格参考URL1", "风格参考URL2"],
+          "tags": ["style-reference", "consistency", "v8"],
+          "recommended_version": "V8/V8.1",
+          "notes": "V8.1 中 Moodboards 和 srefs 变得超级稳定"
+        },
+        {
+          "id": "v8-text-render",
+          "name": "精确文字渲染",
+          "description": "V8 增强的文字渲染能力",
+          "prompt": "[场景描述, e.g., A vintage neon sign on a brick wall] with the text \"[文字内容, e.g., OPEN 24 HOURS]\" in [字体风格, e.g., glowing red neon tubes], [环境, e.g., rainy night, reflections on wet sidewalk] --v 8 --s 200 --hd",
+          "parameters": {
+            "--v": "8",
+            "--s": "200",
+            "--hd": true
+          },
+          "placeholders": ["场景描述", "文字内容", "字体风格", "环境"],
+          "tags": ["text-rendering", "signage", "v8"],
+          "recommended_version": "V8/V8.1",
+          "notes": "V8 中将文字放入引号可显著提升渲染准确性"
+        },
+        {
+          "id": "v8-complex-scene",
+          "name": "复杂多主体构图",
+          "description": "V8 增强的复杂场景理解能力",
+          "prompt": "[详细多主体场景, e.g., In a bustling medieval marketplace, a young woman in a red cloak examines a golden apple at a fruit vendor's stall, while behind her a hooded thief reaches for her coin purse, and in the background a knight on horseback rides through the crowd] --v 8 --s 400 --hd --ar 16:9",
+          "parameters": {
+            "--v": "8",
+            "--s": "400",
+            "--hd": true,
+            "--ar": "16:9"
+          },
+          "placeholders": ["详细多主体场景"],
+          "tags": ["complex-scene", "multi-subject", "v8"],
+          "recommended_version": "V8/V8.1",
+          "notes": "V8 在解析多子句长提示词时结构连贯性显著提升"
+        },
+        {
+          "id": "v8-raw-photo",
+          "name": "RAW 写实摄影",
+          "description": "V8 的极致写实模式",
+          "prompt": "[摄影场景, e.g., An elderly Japanese craftsman carefully shaping a ceramic bowl in his traditional workshop], documentary photography, natural available light, [镜头, e.g., shot on Fujifilm X-T5, 56mm f/1.2], authentic and unposed, subtle film emulation --v 8 --raw --s 100 --hd",
+          "parameters": {
+            "--v": "8",
+            "--raw": true,
+            "--s": "100",
+            "--hd": true
+          },
+          "placeholders": ["摄影场景", "镜头"],
+          "tags": ["raw", "documentary", "photorealism"],
+          "recommended_version": "V8/V8.1",
+          "notes": "V8 官方推荐使用 --raw 获得更朴素可控的写实效果"
+        }
+      ]
+    }
+  ],
+  "parameter_presets": {
+    "description": "常用参数预设组合，可直接附加到任何提示词末尾",
+    "presets": [
+      {
+        "id": "v8-quality-max",
+        "name": "V8 最高质量",
+        "params": "--v 8 --q 4 --hd --s 500",
+        "description": "V8 最高质量输出，适用于最终成品",
+        "cost_multiplier": "4x"
+      },
+      {
+        "id": "v8-fast-explore",
+        "name": "V8 快速探索",
+        "params": "--v 8 --s 200",
+        "description": "V8.1 标准分辨率快速迭代，速度等同 V7 draft",
+        "cost_multiplier": "1x"
+      },
+      {
+        "id": "v8-personalized",
+        "name": "V8 个性化最佳",
+        "params": "--v 8 --s 1000 --p --hd",
+        "description": "V8 推荐的个性化驱动工作流",
+        "cost_multiplier": "1x (V8.1 HD 默认)"
+      },
+      {
+        "id": "v7-creative",
+        "name": "V7 创意探索",
+        "params": "--v 7 --s 750 --c 30",
+        "description": "V7 高风格化+适度混沌，适合创意探索",
+        "cost_multiplier": "1x"
+      },
+      {
+        "id": "v7-consistent",
+        "name": "V7 一致性输出",
+        "params": "--v 7 --s 100 --oref <URL>",
+        "description": "V7 低风格化+全能参考，保持角色/物品一致",
+        "cost_multiplier": "1x"
+      },
+      {
+        "id": "photorealism",
+        "name": "极致写实",
+        "params": "--v 8 --raw --s 100 --hd",
+        "description": "最接近真实摄影的输出，适合产品和人像",
+        "cost_multiplier": "1x (V8.1)"
+      },
+      {
+        "id": "artistic",
+        "name": "艺术风格化",
+        "params": "--v 7 --s 800 --weird 250",
+        "description": "高度艺术化输出，适合插画和概念艺术",
+        "cost_multiplier": "1x"
+      }
+    ]
+  }
+}
