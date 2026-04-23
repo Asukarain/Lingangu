@@ -16,14 +16,57 @@ Lingangu/
 │   ├── stable-diffusion.md                      # Stable Diffusion 进阶控制
 │   ├── flux-dalle.md                            # FLUX 与 DALL-E 提示词技巧
 │   ├── tools-comparison.md                      # 2026 年主流工具对比与选择
-│   └── MJ_Image_to_Video_Mastery.md             # Midjourney 图生视频完全精通指南 ★NEW
+│   └── MJ_Image_to_Video_Mastery.md             # Midjourney 图生视频完全精通指南
 ├── prompts/                                     # AI 提示词模板（JSON 格式）
 │   ├── midjourney-prompts.json                  # Midjourney 模板（含 V8 专属）
 │   ├── stable-diffusion-prompts.json            # Stable Diffusion 模板
 │   ├── flux-dalle-prompts.json                  # FLUX & DALL-E 模板
-│   └── MJ_Video_Control_Templates.json          # Midjourney 视频控制模板 ★NEW
-└── prototype/                                   # 代码原型（.html, .css 等）
-    └── README.md                                # 占位说明
+│   └── MJ_Video_Control_Templates.json          # Midjourney 视频控制模板
+├── prototype/                                   # 代码原型（.html, .css 等）
+│   └── README.md                                # 占位说明
+└── web_app/                                     # ★ 交互式知识库网页应用
+    ├── index.html                               # 主页面（含完整 React SPA）
+    ├── style.css                                # 样式表（Tailwind CSS 编译产物）
+    └── script.js                                # 应用逻辑（React + Recharts 图表）
+```
+
+## 项目架构图
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    Lingangu 知识库架构                            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────┐   │
+│  │  /data    │  │  /docs   │  │ /prompts │  │  /prototype  │   │
+│  │          │  │          │  │          │  │              │   │
+│  │ CSV 数据  │  │ MD 文档  │  │ JSON 模板│  │  代码原型    │   │
+│  │ 表格     │  │ 知识库   │  │ 提示词   │  │  HTML/CSS    │   │
+│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └──────────────┘   │
+│       │             │             │                             │
+│       └─────────────┼─────────────┘                             │
+│                     ▼                                           │
+│            ┌────────────────┐                                   │
+│            │   /web_app     │                                   │
+│            │                │                                   │
+│            │  交互式网页应用 │                                   │
+│            │  ┌────────────┐│                                   │
+│            │  │ index.html ││  ← React SPA 单页应用             │
+│            │  │ style.css  ││  ← Tailwind CSS 样式              │
+│            │  │ script.js  ││  ← 交互图表 + 动画                │
+│            │  └────────────┘│                                   │
+│            └────────────────┘                                   │
+│                                                                 │
+│  功能板块：                                                      │
+│  ┌─────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐           │
+│  │Midjourney│ │V8 Future │ │Video Lab │ │Stable    │           │
+│  │深度指南  │ │前瞻分析  │ │图生视频  │ │Diffusion │           │
+│  └─────────┘ └──────────┘ └──────────┘ └──────────┘           │
+│  ┌─────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐           │
+│  │FLUX &   │ │JSON 模板 │ │工具对比  │ │成长路线  │           │
+│  │DALL-E   │ │一键复制  │ │雷达/柱状 │ │五级体系  │           │
+│  └─────────┘ └──────────┘ └──────────┘ └──────────┘           │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 ## 内容概览
@@ -40,7 +83,7 @@ Lingangu/
 | [stable-diffusion.md](docs/stable-diffusion.md) | Stable Diffusion 进阶控制，含 ControlNet、LoRA、ComfyUI 节点工作流 |
 | [flux-dalle.md](docs/flux-dalle.md) | FLUX 与 DALL-E 自然语言提示词最佳实践 |
 | [tools-comparison.md](docs/tools-comparison.md) | 2026 年 8 大主流工具多维度对比与选型建议 |
-| [**MJ_Image_to_Video_Mastery.md**](docs/MJ_Image_to_Video_Mastery.md) | **★ 新增** Midjourney 图生视频完全精通指南，含 V1 Video Model 全维度技术栈 |
+| [MJ_Image_to_Video_Mastery.md](docs/MJ_Image_to_Video_Mastery.md) | Midjourney 图生视频完全精通指南，含 V1 Video Model 全维度技术栈 |
 
 ### `/prompts` — JSON 提示词模板
 
@@ -57,9 +100,27 @@ Lingangu/
 | [midjourney-prompts.json](prompts/midjourney-prompts.json) | Midjourney 图像提示词模板，含 V8 专属模板与参数预设 |
 | [stable-diffusion-prompts.json](prompts/stable-diffusion-prompts.json) | Stable Diffusion 正/负面提示词与 ControlNet 配置 |
 | [flux-dalle-prompts.json](prompts/flux-dalle-prompts.json) | FLUX & DALL-E 自然语言风格模板 |
-| [**MJ_Video_Control_Templates.json**](prompts/MJ_Video_Control_Templates.json) | **★ 新增** 12 个顶尖生图师专用视频控制模板 |
+| [MJ_Video_Control_Templates.json](prompts/MJ_Video_Control_Templates.json) | 12 个顶尖生图师专用视频控制模板 |
 
 **视频模板特别说明**：视频模板包含 `starting_frame_prompt`（起始帧提示词）和 `video_prompt`（视频提示词）两个独立字段，需分两步使用——先生成起始帧图片，再用视频提示词生成动画。模板覆盖产品广告、奇幻电影、社交媒体循环、角色叙事、自然物理和高级技巧六大类别。
+
+### `/web_app` — 交互式知识库网页应用
+
+基于 React + Tailwind CSS + Recharts 构建的单页应用，采用瑞士国际主义设计风格（Swiss International Style），包含以下交互板块：
+
+| 板块 | 内容 |
+|------|------|
+| Midjourney 深度指南 | 提示词结构公式 + 18 项参数速查表（含 V8 NEW 标记） |
+| V8/V8.1 新特性 | 范式转变对比、三步推荐工作流、6 组参数预设卡片 |
+| **V8 Future** | 技术趋势前瞻、V9 架构预测、生态系统扩展、演进时间线 |
+| **Video Lab** | 6 种运动类型的 Prompt→运动逻辑 卡片、视频参数速查、四大流派工作流、避坑指南 |
+| Stable Diffusion | 八大核心类别、ControlNet 技术、高级语法手风琴 |
+| FLUX & DALL-E | 分页展示核心优势和提示词技巧 |
+| JSON 模板 | 三标签页共 12+ 模板，支持一键复制 |
+| 工具对比 | 交互式雷达图 + 柱状图 + 综合对比表 |
+| 成长路线 | 五级生图师进阶体系 |
+
+**本地预览方式**：直接在浏览器中打开 `web_app/index.html` 即可查看（需要网络连接以加载 Google Fonts）。
 
 ### `/prototype` — 代码原型
 
@@ -67,9 +128,8 @@ Lingangu/
 
 ## 更新日志
 
-- **2026-04-23** — ★ 新增 Midjourney 图生视频完全精通指南 + 12 个视频控制 JSON 模板
-  - `docs/MJ_Image_to_Video_Mastery.md`：基础原理、参数字典、物理运动诱导、镜头语言、五大流派工作流、局限与避坑
-  - `prompts/MJ_Video_Control_Templates.json`：产品广告/奇幻电影/社交媒体/角色叙事/自然物理/高级技巧六大类别
+- **2026-04-23** — ★ 新增交互式知识库网页应用（/web_app），含 V8 Future 前瞻板块和 Video Lab 图生视频板块
+- **2026-04-23** — 新增 Midjourney 图生视频完全精通指南 + 12 个视频控制 JSON 模板
 - **2026-04-23** — 合并 AI-to-photos 仓库，重新组织目录结构（/data、/prompts、/prototype）
 - **2026-04-22** — 新增 Midjourney V8/V8.1 知识体系，JSON 提示词模板
 - **2026-04-22** — 初始化知识库，完整覆盖四大主流工具
