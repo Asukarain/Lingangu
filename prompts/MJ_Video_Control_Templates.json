@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "title": "Midjourney 图生视频控制提示词模板库",
+    "version": "1.0.0",
+    "updated": "2026-04-23",
+    "author": "Manus AI",
+    "description": "顶尖生图师专用的 Midjourney 视频控制提示词模板，覆盖产品广告、奇幻电影、社交媒体循环、角色叙事、自然物理等主要流派。每个模板包含起始帧提示词、视频提示词和推荐参数。",
+    "usage": "1. 选择适合场景的模板 2. 替换 {{placeholder}} 中的内容 3. 先生成起始帧 4. 用视频提示词 + 参数生成视频"
+  },
+  "templates": [
+    {
+      "id": "product_hero_orbit",
+      "name": "产品英雄环绕展示",
+      "category": "产品广告",
+      "difficulty": "入门",
+      "description": "适合电商产品、科技设备的 360° 环绕展示视频",
+      "starting_frame_prompt": "{{product_name}} centered on a {{surface_material}} surface, studio lighting with soft rim light, {{background_color}} background, product photography, ultra sharp detail --ar 16:9 --v 8 --s 200",
+      "video_prompt": "The camera slowly orbits around the {{product_name}}, studio rim light catches the surface details, soft fog drifts across the base",
+      "parameters": {
+        "--motion": "low",
+        "--video": "1",
+        "--ar": "16:9",
+        "--loop": true,
+        "--bs": 2
+      },
+      "tips": "使用 --motion low 保持产品细节清晰；--loop 创建无缝循环适合电商展示；起始帧不要放大(upscale)以避免降采样伪影",
+      "example": {
+        "product_name": "matte-black smart watch",
+        "surface_material": "mirrored plinth",
+        "background_color": "deep charcoal",
+        "full_starting_prompt": "matte-black smart watch centered on a mirrored plinth surface, studio lighting with soft rim light, deep charcoal background, product photography, ultra sharp detail --ar 16:9 --v 8 --s 200",
+        "full_video_prompt": "The camera slowly orbits around the matte-black smart watch, studio rim light catches the surface details, soft fog drifts across the base --motion low --video 1 --ar 16:9 --loop"
+      }
+    },
+    {
+      "id": "product_macro_reveal",
+      "name": "产品微距推进揭示",
+      "category": "产品广告",
+      "difficulty": "中级",
+      "description": "从全景缓慢推进到产品细节的微距镜头，适合展示材质和工艺",
+      "starting_frame_prompt": "{{product_name}} in {{environment}}, shallow depth of field, cinematic lighting, macro photography style --ar 16:9 --v 8 --s 250",
+      "video_prompt": "Slow dolly-in toward the {{product_name}}, the camera pushes closer revealing intricate {{detail_focus}}, background gradually blurs into soft bokeh",
+      "parameters": {
+        "--motion": "low",
+        "--video": "1",
+        "--ar": "16:9",
+        "--raw": true,
+        "--bs": 1
+      },
+      "tips": "微距镜头是隐藏 480p 分辨率的最佳策略；使用 --raw 确保镜头运动精确跟随提示词",
+      "example": {
+        "product_name": "luxury mechanical watch",
+        "environment": "dark velvet surface with dramatic side lighting",
+        "detail_focus": "gear mechanisms visible through sapphire crystal",
+        "full_starting_prompt": "luxury mechanical watch in dark velvet surface with dramatic side lighting, shallow depth of field, cinematic lighting, macro photography style --ar 16:9 --v 8 --s 250",
+        "full_video_prompt": "Slow dolly-in toward the luxury mechanical watch, the camera pushes closer revealing intricate gear mechanisms visible through sapphire crystal, background gradually blurs into soft bokeh --motion low --video 1 --ar 16:9 --raw"
+      }
+    },
+    {
+      "id": "fantasy_creature_emerge",
+      "name": "奇幻生物破界而出",
+      "category": "奇幻电影",
+      "difficulty": "高级",
+      "description": "巨型奇幻生物从环境中破出的史诗级镜头",
+      "starting_frame_prompt": "{{environment}} with subtle cracks and glowing energy beneath the surface, epic cinematic composition, volumetric lighting, dramatic clouds --ar 21:9 --v 8 --s 300 --chaos 15",
+      "video_prompt": "{{creature}} bursts from the {{environment}}, the camera rises dramatically as debris and {{particle_effect}} scatter in all directions, epic scale reveal",
+      "parameters": {
+        "--motion": "high",
+        "--video": "1",
+        "--ar": "21:9",
+        "--bs": 4
+      },
+      "tips": "使用 --motion high 配合粒子效果获得最佳动态感；起始帧应展示'即将发生'的瞬间而非已经发生后；--bs 4 批量生成因为高动态场景变化大",
+      "example": {
+        "creature": "crystal dragon",
+        "environment": "ancient glacier",
+        "particle_effect": "snow shards and ice crystals glitter",
+        "full_starting_prompt": "ancient glacier with subtle cracks and glowing energy beneath the surface, epic cinematic composition, volumetric lighting, dramatic clouds --ar 21:9 --v 8 --s 300 --chaos 15",
+        "full_video_prompt": "crystal dragon bursts from the ancient glacier, the camera rises dramatically as debris and snow shards and ice crystals glitter scatter in all directions, epic scale reveal --motion high --video 1 --ar 21:9"
+      }
+    },
+    {
+      "id": "fantasy_magic_portal",
+      "name": "魔法传送门开启",
+      "category": "奇幻电影",
+      "difficulty": "高级",
+      "description": "魔法传送门从无到有逐渐开启的视觉效果",
+      "starting_frame_prompt": "{{character}} standing in {{environment}}, hands raised with faint magical energy gathering between palms, cinematic lighting, fantasy art style --ar 16:9 --v 8 --s 280",
+      "video_prompt": "{{character}} channels energy as a swirling portal of {{magic_color}} light tears open before them, the camera slowly dollies back to reveal the growing portal, particles spiral inward",
+      "parameters": {
+        "--motion": "high",
+        "--video": "1",
+        "--ar": "16:9",
+        "--raw": false,
+        "--bs": 2
+      },
+      "tips": "让 MJ 的风格化发挥作用（不加 --raw），魔法效果会更华丽；起始帧展示'即将释放'的姿态",
+      "example": {
+        "character": "hooded sorceress",
+        "environment": "ancient stone ruins at twilight",
+        "magic_color": "ethereal blue and gold",
+        "full_starting_prompt": "hooded sorceress standing in ancient stone ruins at twilight, hands raised with faint magical energy gathering between palms, cinematic lighting, fantasy art style --ar 16:9 --v 8 --s 280",
+        "full_video_prompt": "hooded sorceress channels energy as a swirling portal of ethereal blue and gold light tears open before them, the camera slowly dollies back to reveal the growing portal, particles spiral inward --motion high --video 1 --ar 16:9"
+      }
+    },
+    {
+      "id": "social_cinemagraph_water",
+      "name": "社交媒体水景循环",
+      "category": "社交媒体循环",
+      "difficulty": "入门",
+      "description": "适合 Instagram/TikTok 的完美循环水景氛围视频",
+      "starting_frame_prompt": "{{water_scene}}, serene atmosphere, golden hour lighting, cinematic color grading --ar 9:16 --v 8 --s 200",
+      "video_prompt": "Gentle waves ripple endlessly across the surface, light dances on the water in a continuous seamless rhythm, ambient and meditative",
+      "parameters": {
+        "--motion": "low",
+        "--video": "1",
+        "--ar": "9:16",
+        "--loop": true,
+        "--bs": 2
+      },
+      "tips": "水流是 MJ 视频最擅长的物理模拟；--loop + 循环关键词(endless, seamless, continuous)确保完美循环；9:16 竖屏适合手机端",
+      "example": {
+        "water_scene": "koi pond with lotus flowers floating on crystal clear water",
+        "full_starting_prompt": "koi pond with lotus flowers floating on crystal clear water, serene atmosphere, golden hour lighting, cinematic color grading --ar 9:16 --v 8 --s 200",
+        "full_video_prompt": "Gentle waves ripple endlessly across the surface, light dances on the water in a continuous seamless rhythm, ambient and meditative --motion low --video 1 --ar 9:16 --loop"
+      }
+    },
+    {
+      "id": "social_fire_loop",
+      "name": "社交媒体火焰循环",
+      "category": "社交媒体循环",
+      "difficulty": "中级",
+      "description": "高对比度火焰循环视频，适合暗色系品牌内容",
+      "starting_frame_prompt": "{{fire_subject}} surrounded by dancing flames, deep black background, dramatic chiaroscuro lighting, high contrast --ar 1:1 --v 8 --s 250",
+      "video_prompt": "Flames flicker and curl endlessly around the {{fire_subject}}, embers drift upward in a continuous radial motion, the fire breathes in a seamless infinite cycle",
+      "parameters": {
+        "--motion": "high",
+        "--video": "1",
+        "--ar": "1:1",
+        "--loop": true,
+        "--bs": 4
+      },
+      "tips": "火焰需要 --motion high 才能表现动态特性；高对比度+深黑背景有效掩盖分辨率限制；1:1 方形适合多平台通用",
+      "example": {
+        "fire_subject": "ancient bronze skull",
+        "full_starting_prompt": "ancient bronze skull surrounded by dancing flames, deep black background, dramatic chiaroscuro lighting, high contrast --ar 1:1 --v 8 --s 250",
+        "full_video_prompt": "Flames flicker and curl endlessly around the ancient bronze skull, embers drift upward in a continuous radial motion, the fire breathes in a seamless infinite cycle --motion high --video 1 --ar 1:1 --loop"
+      }
+    },
+    {
+      "id": "portrait_emotion_shift",
+      "name": "人物微表情变化",
+      "category": "角色叙事",
+      "difficulty": "高级",
+      "description": "捕捉人物细微表情变化的电影级特写",
+      "starting_frame_prompt": "extreme close-up portrait of {{character_description}}, eyes {{initial_expression}}, cinematic film grain, shallow depth of field, Kodak Portra 400 --ar 16:9 --v 8 --s 150 --cref {{character_ref_url}}",
+      "video_prompt": "The camera begins with a slow intimate dolly-in toward the face, {{expression_change}}, the light shifts subtly across the features",
+      "parameters": {
+        "--motion": "low",
+        "--video": "1",
+        "--ar": "16:9",
+        "--raw": true,
+        "--bs": 2
+      },
+      "tips": "面部表情是最具挑战性的运动类型；使用 --raw 获得更精确的控制；描述表情变化的过程而非结果；--cref 保持角色一致性",
+      "example": {
+        "character_description": "middle-aged man with weathered skin and deep-set green eyes",
+        "initial_expression": "closed, face tense with controlled composure",
+        "expression_change": "his eyes slowly open, a flicker of recognition crosses his face, jaw tightening for a moment before relaxing into a faint, bittersweet smile",
+        "character_ref_url": "<your_character_reference_url>",
+        "full_starting_prompt": "extreme close-up portrait of middle-aged man with weathered skin and deep-set green eyes, eyes closed face tense with controlled composure, cinematic film grain, shallow depth of field, Kodak Portra 400 --ar 16:9 --v 8 --s 150",
+        "full_video_prompt": "The camera begins with a slow intimate dolly-in toward the face, his eyes slowly open, a flicker of recognition crosses his face, jaw tightening for a moment before relaxing into a faint bittersweet smile, the light shifts subtly across the features --motion low --video 1 --ar 16:9 --raw"
+      }
+    },
+    {
+      "id": "character_walk_tracking",
+      "name": "角色行走跟踪镜头",
+      "category": "角色叙事",
+      "difficulty": "中级",
+      "description": "角色在环境中行走的跟踪拍摄镜头",
+      "starting_frame_prompt": "{{character_description}} walking through {{environment}}, mid-shot from behind, cinematic composition, atmospheric lighting --ar 16:9 --v 8 --s 200 --cref {{character_ref_url}} --sref {{style_ref_url}}",
+      "video_prompt": "Camera tracking view from behind following {{character_short}} walking through the {{environment}}, {{environmental_detail}}, steady tracking shot",
+      "parameters": {
+        "--motion": "low",
+        "--video": "1",
+        "--ar": "16:9",
+        "--bs": 2
+      },
+      "tips": "跟踪镜头需要明确描述镜头位置(from behind/from a distance)；使用简化的角色引用(he/she)而非完整描述；--sref 保持环境风格一致",
+      "example": {
+        "character_description": "lone samurai in tattered robes",
+        "character_short": "the samurai",
+        "environment": "rain-soaked neon-lit alley in cyberpunk Tokyo",
+        "environmental_detail": "neon reflections shimmer on wet pavement, rain falls steadily",
+        "character_ref_url": "<your_character_reference_url>",
+        "style_ref_url": "<your_style_reference_url>",
+        "full_starting_prompt": "lone samurai in tattered robes walking through rain-soaked neon-lit alley in cyberpunk Tokyo, mid-shot from behind, cinematic composition, atmospheric lighting --ar 16:9 --v 8 --s 200",
+        "full_video_prompt": "Camera tracking view from behind following the samurai walking through the rain-soaked neon-lit alley in cyberpunk Tokyo, neon reflections shimmer on wet pavement rain falls steadily, steady tracking shot --motion low --video 1 --ar 16:9"
+      }
+    },
+    {
+      "id": "nature_timelapse",
+      "name": "自然延时摄影",
+      "category": "自然物理",
+      "difficulty": "中级",
+      "description": "模拟延时摄影效果的自然场景变化",
+      "starting_frame_prompt": "{{nature_scene}} at {{time_of_day}}, epic landscape photography, dramatic sky, wide angle lens --ar 21:9 --v 8 --s 300",
+      "video_prompt": "Time-lapse style: clouds race across the sky, {{nature_change}}, the light transitions dramatically as time accelerates, the landscape transforms",
+      "parameters": {
+        "--motion": "high",
+        "--video": "1",
+        "--ar": "21:9",
+        "--bs": 4
+      },
+      "tips": "延时效果需要 --motion high；21:9 超宽比例增强电影感；云的运动是最可靠的延时效果指标",
+      "example": {
+        "nature_scene": "volcanic mountain range with wildflower meadow in foreground",
+        "time_of_day": "golden hour transitioning to blue hour",
+        "nature_change": "wildflowers sway as shadows lengthen across the meadow, the sky shifts from warm gold to deep violet",
+        "full_starting_prompt": "volcanic mountain range with wildflower meadow in foreground at golden hour transitioning to blue hour, epic landscape photography, dramatic sky, wide angle lens --ar 21:9 --v 8 --s 300",
+        "full_video_prompt": "Time-lapse style: clouds race across the sky, wildflowers sway as shadows lengthen across the meadow the sky shifts from warm gold to deep violet, the light transitions dramatically as time accelerates, the landscape transforms --motion high --video 1 --ar 21:9"
+      }
+    },
+    {
+      "id": "underwater_drift",
+      "name": "水下漂流探索",
+      "category": "自然物理",
+      "difficulty": "入门",
+      "description": "水下生物和粒子的梦幻漂流效果",
+      "starting_frame_prompt": "{{underwater_scene}}, bioluminescent glow, deep ocean blue, volumetric light rays penetrating from above, underwater photography --ar 16:9 --v 8 --s 250",
+      "video_prompt": "{{underwater_subject}} drifts gracefully through deep ocean currents, bioluminescent particles float and swirl around it, light rays dance through the water, slow ethereal movement",
+      "parameters": {
+        "--motion": "low",
+        "--video": "1",
+        "--ar": "16:9",
+        "--loop": true,
+        "--bs": 2
+      },
+      "tips": "水下场景是 MJ 视频的强项；--motion low 产生优雅的慢速漂流；bioluminescent 粒子效果增加视觉丰富度同时掩盖分辨率",
+      "example": {
+        "underwater_scene": "deep ocean scene with glowing jellyfish cluster and coral formations",
+        "underwater_subject": "a translucent jellyfish with trailing tentacles",
+        "full_starting_prompt": "deep ocean scene with glowing jellyfish cluster and coral formations, bioluminescent glow, deep ocean blue, volumetric light rays penetrating from above, underwater photography --ar 16:9 --v 8 --s 250",
+        "full_video_prompt": "a translucent jellyfish with trailing tentacles drifts gracefully through deep ocean currents, bioluminescent particles float and swirl around it, light rays dance through the water, slow ethereal movement --motion low --video 1 --ar 16:9 --loop"
+      }
+    },
+    {
+      "id": "keyframe_transformation",
+      "name": "关键帧变形过渡",
+      "category": "高级技巧",
+      "difficulty": "专家",
+      "description": "利用首帧+末帧关键帧功能实现精确的场景变形过渡",
+      "starting_frame_prompt": "{{scene_A}} in {{style}}, cinematic composition --ar 16:9 --v 8 --s 200",
+      "end_frame_prompt": "{{scene_B}} in {{style}}, cinematic composition --ar 16:9 --v 8 --s 200",
+      "video_prompt": "Smooth cinematic transition from {{scene_A_short}} to {{scene_B_short}}, the elements morph and flow naturally, continuous camera movement",
+      "parameters": {
+        "--motion": "high",
+        "--video": "1",
+        "--ar": "16:9",
+        "--end": "<end_frame_url>",
+        "--bs": 4
+      },
+      "tips": "首帧和末帧应使用相同的 --sref 和 --ar 确保风格一致；--motion high 让变形更流畅；批量生成(--bs 4)因为变形效果变化大",
+      "example": {
+        "scene_A": "young woman's face in spring with cherry blossoms",
+        "scene_B": "same woman's face in winter with snowflakes",
+        "style": "oil painting style with soft brushstrokes",
+        "scene_A_short": "spring portrait with cherry blossoms",
+        "scene_B_short": "winter portrait with snowflakes",
+        "full_starting_prompt": "young woman's face in spring with cherry blossoms in oil painting style with soft brushstrokes, cinematic composition --ar 16:9 --v 8 --s 200",
+        "full_end_prompt": "same woman's face in winter with snowflakes in oil painting style with soft brushstrokes, cinematic composition --ar 16:9 --v 8 --s 200",
+        "full_video_prompt": "Smooth cinematic transition from spring portrait with cherry blossoms to winter portrait with snowflakes, the elements morph and flow naturally, continuous camera movement --motion high --video 1 --ar 16:9 --end <end_frame_url>"
+      }
+    },
+    {
+      "id": "about_to_action",
+      "name": "'即将发生'动作诱导",
+      "category": "高级技巧",
+      "difficulty": "专家",
+      "description": "利用'即将发生'技巧精确控制主体执行特定动作",
+      "starting_frame_prompt": "{{subject}} about to {{action_setup}}, {{environment}}, cinematic freeze frame, tension in the composition --ar 16:9 --v 8 --s 180",
+      "video_prompt": "{{subject_short}} {{action_execution}}, {{secondary_action}}, {{environmental_reaction}}",
+      "parameters": {
+        "--motion": "high",
+        "--video": "1",
+        "--ar": "16:9",
+        "--raw": true,
+        "--bs": 2
+      },
+      "tips": "起始帧必须展示动作'即将发生前一刻'的状态；视频提示词必须明确描述动作执行过程，否则主体可能'拒绝'行动；使用 --raw 确保动作精确",
+      "example": {
+        "subject": "a golden eagle perched on a cliff edge",
+        "action_setup": "launch into flight, wings slightly spread, muscles tensed",
+        "subject_short": "the eagle",
+        "action_execution": "launches powerfully from the cliff, wings spread wide catching the updraft",
+        "secondary_action": "feathers ruffle in the wind as it gains altitude",
+        "environmental_reaction": "loose rocks tumble from the cliff edge, dust swirls in the wake",
+        "full_starting_prompt": "a golden eagle perched on a cliff edge about to launch into flight wings slightly spread muscles tensed, dramatic mountain landscape at dawn, cinematic freeze frame, tension in the composition --ar 16:9 --v 8 --s 180",
+        "full_video_prompt": "the eagle launches powerfully from the cliff wings spread wide catching the updraft, feathers ruffle in the wind as it gains altitude, loose rocks tumble from the cliff edge dust swirls in the wake --motion high --video 1 --ar 16:9 --raw"
+      }
+    }
+  ],
+  "motion_keywords_reference": {
+    "water_and_liquid": ["drifting through currents", "waves crash", "ripples spread", "water cascading", "dripping slowly", "flowing stream", "tidal surge", "rain falling"],
+    "fire_and_smoke": ["flames flickering", "smoke curling upward", "embers drifting", "fire spreading", "sparks flying", "smoldering", "inferno raging"],
+    "wind_and_air": ["hair fluttering with rhythm", "flags swaying in breeze", "leaves peel off into wind", "dust particles drift", "fabric billowing", "petals scattering"],
+    "facial_expressions": ["eyes slowly open", "jaw tightening", "faint smile forming", "brow furrowing", "exhales with controlled tension", "gaze shifts", "tears welling"],
+    "camera_movements": ["slow orbit", "dolly-in", "dolly-zoom", "tilt-up", "pan left", "crane rising", "tracking shot", "zoom in", "handheld shake", "steady-cam glide"],
+    "loop_friendly": ["endless", "seamless", "radial motion", "circular", "rotating", "orbital", "continuous", "infinite", "repeating", "breathing rhythm"],
+    "temporal_connectors": ["first", "then", "next", "after that", "suddenly", "eventually", "as", "while", "at the same time", "finally"]
+  }
+}
