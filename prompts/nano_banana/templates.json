@@ -1,0 +1,68 @@
+{
+  "multi_image_fusion_templates": [
+    {
+      "name": "多图融合模板 (风格+主体)",
+      "description": "将参考图1的风格与参考图2的主体融合，并保持参考图3的光影效果。",
+      "prompt": "Merge the artistic style of @image1 with the main subject from @image2, ensuring the lighting and atmosphere are consistent with @image3. High detail, cinematic, 4k.",
+      "parameters": {
+        "reference_images": ["@image1", "@image2", "@image3"],
+        "resolution": "4k",
+        "style_fidelity": "high"
+      }
+    },
+    {
+      "name": "角色一致性多图生图模板",
+      "description": "在多个场景中保持角色的面部特征和服装一致性。",
+      "prompt": "Generate a series of images depicting a consistent character. The character's appearance should strictly follow @image1. Scene 1: {{scene_1_description}}. Scene 2: {{scene_2_description}}. Scene 3: {{scene_3_description}}. Maintain character consistency throughout.",
+      "parameters": {
+        "reference_images": ["@image1"],
+        "character_consistency": "strict",
+        "scenes": 3
+      }
+    }
+  ],
+  "precise_local_editing_templates": [
+    {
+      "name": "文字引导局部修改模板",
+      "description": "根据文字描述精确修改图片中的局部元素。",
+      "prompt": "In @image1, precisely change the {{object_to_change}} to {{new_description}}. Ensure the changes are seamless and integrate naturally with the existing image. Keep all other elements unchanged.",
+      "parameters": {
+        "reference_images": ["@image1"],
+        "editing_mode": "inpaint",
+        "fidelity": "high"
+      }
+    },
+    {
+      "name": "背景替换模板",
+      "description": "替换图片中的背景，同时保持主体不变。",
+      "prompt": "Replace the background of @image1 with a {{new_background_description}}. The main subject should remain exactly as it is, perfectly integrated into the new background. Cinematic lighting, photorealistic.",
+      "parameters": {
+        "reference_images": ["@image1"],
+        "editing_mode": "outpaint",
+        "fidelity": "high"
+      }
+    }
+  ],
+  "complex_semantic_following_templates": [
+    {
+      "name": "长文本解析生成模板 (信息图)",
+      "description": "将长文本描述转化为视觉信息图。",
+      "prompt": "Create a detailed infographic based on the following text: \"{{long_text_content}}\". The infographic should be visually appealing, easy to understand, and accurately represent all key points from the text. Use a clean, modern design style with appropriate icons and data visualizations. 4k resolution.",
+      "parameters": {
+        "input_type": "text",
+        "output_type": "infographic",
+        "resolution": "4k"
+      }
+    },
+    {
+      "name": "概念图生成模板",
+      "description": "根据复杂概念生成抽象或具象的视觉表现。",
+      "prompt": "Visualize the concept of '{{complex_concept}}' in an abstract yet understandable manner. Use {{art_style}} art style, with a focus on {{key_elements}}. The image should evoke a sense of {{emotion_or_feeling}}. 4k, highly artistic.",
+      "parameters": {
+        "input_type": "concept",
+        "output_type": "abstract_art",
+        "resolution": "4k"
+      }
+    }
+  ]
+}
